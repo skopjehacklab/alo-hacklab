@@ -10,5 +10,6 @@ RGB led која дига паника кога некој ќе и даде ко
 1. Треба https://github.com/mvitousek/pi-blaster да биде инсталирано и стартувано на RPI-то.
 2. Треба да има и flask за веб сервисот.
 
-    pip install --user flask
-    ./app.py
+
+        pip install --user flask
+        ./app.py
