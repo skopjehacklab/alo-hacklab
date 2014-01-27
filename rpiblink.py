@@ -28,6 +28,18 @@ def on(led,intensity=1):
 
     pwm.close()
 
+
+def ramp(led, t, steps = 10):
+    sleep_time = 1.0 * t / steps
+    for x in range(steps)
+        on(led, 1.0 * x / steps)
+        time.sleep(sleep_time)
+    for x in range(steps)
+        on(led, 1.0 * (steps - x) / steps)
+        time.sleep(sleep_time)
+    off(randled)    
+        
+        
 def random_blink():
     """blink random time between white, red, green, blue for 5 seconds"""
                                                                                         
@@ -35,13 +47,11 @@ def random_blink():
     while time.time() < workseconds:
         randsleep = random.randrange(0,100)/1000
         randled = random.choice(["ALL","RED","GREEN","BLUE"])
-
-        on(randled)
-        time.sleep(randsleep)
-        off(randled)
-        time.sleep(randsleep)
+        ramp(randled, randsleep)
+        
 
 if __name__=="__main__":
     random_blink()
     off("ALL")
+
 
