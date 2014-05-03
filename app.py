@@ -19,7 +19,7 @@ def hacklab_check(f):
         return f(*args, **kwargs)
     return decorated_function
 
-@app.route("/api/blink",methods = ['GET'])
+@app.route("/api/blink", methods=['POST'])
 @hacklab_check
 def blink():
     rpiblink.random_blink()
