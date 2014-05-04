@@ -6,6 +6,7 @@ import random
 #pins on the rpi for each led
 LEDS = {"RED":17,"GREEN":21,"BLUE":22}
 
+
 def off(pwm, led):
     if led == 'all':
         for pin in LEDS.values():
@@ -36,15 +37,16 @@ def ramp(led, t, steps = 10):
     off(pwm, led)
     pwm.close()
 
+
 def random_blink():
     """blink random time between white, red, green, blue for 5 seconds"""
-    
+
     workseconds = time.time() + 5
     while time.time() < workseconds:
         randsleep = random.randrange(0, 300) / 1000
         randled = random.choice(["all","RED","GREEN","BLUE"])
         ramp(randled, randsleep)
 
+
 if __name__=="__main__":
     random_blink()
-
