@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask, abort, request, jsonify
+from flask import Flask, abort, request, jsonify, send_file
 from functools import wraps
 
 import rpiblink
@@ -27,6 +27,9 @@ def blink():
     rpiblink.random_blink()
     return jsonify( { 'done': True } )
 
+@app.route("/")
+def index():
+    return send_file('README.md', mimetype='text/plain')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",debug=True)
