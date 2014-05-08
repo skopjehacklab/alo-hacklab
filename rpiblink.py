@@ -26,7 +26,7 @@ def on(pwm, led, intensity=1):
 
 
 def ramp(led, t, steps = 10):
-    pwm = open("/dev/pi-blaster","r+")
+    pwm = open("/dev/pi-blaster","rb+", buffering=0)
     sleep_time = 1.0 * t / steps
     for x in range(steps):
         on(pwm, led, 1.0 * x / steps)
