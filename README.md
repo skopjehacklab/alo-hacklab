@@ -11,3 +11,8 @@ RGB led која дига паника кога некој ќе и даде ко
 2. На машината каде што е веб сервисот треба да се инсталираат flask и requests:
 
    PYTHONUSERBASE=$PWD/py-env pip2 install --user -r requirements.txt
+
+
+ps.
+
+Uses a pi-blaster without the `daemon` function.
